@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>CSS3 features demo 1</title>
+<style type="text/css">
+#demo {
+	margin: auto;
+	width: 600px;
+}
+
+#target {
+	margin: 50px auto;
+	width: 200px;
+	height: 100px;
+	line-height: 100px;
+	text-align: center;
+	background: #EEE;
+	/* default CSS3 values: */
+	border-radius: 8px;
+	box-shadow: #666 0 2px 3px;
+	background: -webkit-gradient(linear, 0 0, 0 bottom, from(#9F9), to(#393)
+		);
+	background: -webkit-linear-gradient(#9F9, #393);
+	background: -moz-linear-gradient(#9F9, #393);
+	background: -ms-linear-gradient(#9F9, #393);
+	background: -o-linear-gradient(#9F9, #393);
+
+	/*-webkit-border-radius: 8px;
+      -moz-border-radius: 8px;
+      -webkit-box-shadow: #666 0 2px 3px;
+      -moz-box-shadow: #666 0 2px 3px;
+      -pie-background: linear-gradient(#9F9, #393);*/
+}
+
+.row{
+	clear: both;
+}
+
+.row .label{
+	width: 120px;
+	text-align: right;
+	float: left;
+}
+.row .value{
+	text-align: left;
+	float: left;
+	margin-left:10px;
+}
+.row .value .range{
+	width:100px;
+}
+.row .value .range1{
+	width:100px;
+}
+</style>
+<script type="text/javascript"
+	src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
+</head>
+<body>
+	<div id="demo">
+		<div id="config">
+			<fieldset>
+				<legend>CSS样式值配置</legend>
+				<fieldset>
+					<legend>
+						<label><input type="checkbox" />border</label>
+					</legend>
+					<div class="row">
+						<div class="label">border-width:</div>
+						<div class="value">
+							<input type="range" value="1" max="10" class="range"><span>1</span>px
+						</div>
+					</div>
+					<div class="row">
+						<div class="label">border-color:</div>
+						<div class="value">
+							<input type="text" value="#696" size="5">
+						</div>
+					</div>
+					<div class="row">
+						<div class="label">border-radius:</div>
+						<div class="value">
+							<input type="range" value="8" max="20" class="range"><span>8</span>px
+						</div>
+					</div>
+				</fieldset>
+				<fieldset>
+					<legend>
+						<label><input type="checkbox" />box-shadow</label>
+					</legend>
+					<div class="row">
+						<div class="value">
+							Blur<input type="range" value="3" max="20" class="range1"><span>3</span>px
+							,X<input type="range" value="0" max="20" class="range1"><span>0</span>px
+							,Y<input type="range" value="2" max="20" class="range1"><span>2</span>px
+						</div>
+					</div>
+				</fieldset>
+				<fieldset>
+					<legend>
+						<label><input type="checkbox" />background linear-gradient</label>
+					</legend>
+					<div class="row">
+						<div class="value">
+							Start Color<input type="text" value="#EEFF99" size="6">
+							,End Color<input type="text" value="#66EE33" size="6">
+						</div>
+					</div>
+				</fieldset>
+			</fieldset>
+		</div>
+		<div id="target">OK,好</div>
+	</div>
+</body>
+</html>
