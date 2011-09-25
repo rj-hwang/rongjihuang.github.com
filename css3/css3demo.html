@@ -3,28 +3,38 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>CSS3 features demo 1</title>
+<link type="text/css" href="../assets/farbtastic.css" rel="stylesheet" />
+<script type="text/javascript" src="../assets/jquery.min.js"></script>
+<script type="text/javascript" src="../assets/farbtastic.min.js"></script>
 <style type="text/css">
+body{background-color: #f5f5f5;}
 #demo {
 	margin: auto;
-	width: 600px;
+	width: 650px;
+	position: relative;
 }
 
 #target {
-	margin: 50px auto;
+	position: absolute;
+	top: 50%;
+	margin-top: -50px;
 	width: 200px;
 	height: 100px;
 	line-height: 100px;
 	text-align: center;
 	background: #EEE;
+	border-style:solid;
 	/* default CSS3 values: */
 	border-radius: 8px;
 	box-shadow: #666 0 2px 3px;
-	background: -webkit-gradient(linear, 0 0, 0 bottom, from(#9F9), to(#393)
-		);
+	/* background: -webkit-gradient(linear, 0 0, 0 bottom, from(#9F9), to(#393)
+		); */
 	background: -webkit-linear-gradient(#9F9, #393);
 	background: -moz-linear-gradient(#9F9, #393);
 	background: -ms-linear-gradient(#9F9, #393);
 	background: -o-linear-gradient(#9F9, #393);
+	width: 200px;
+	margin-top: -50px;
 
 	/*-webkit-border-radius: 8px;
       -moz-border-radius: 8px;
@@ -33,84 +43,209 @@
       -pie-background: linear-gradient(#9F9, #393);*/
 }
 
-.row{
+#config {
+	margin: 0 0 10px 300px;
+}
+
+.row {
 	clear: both;
 }
 
-.row .label{
+.row .label {
 	width: 120px;
 	text-align: right;
 	float: left;
 }
-.row .value{
+
+.row .value {
 	text-align: left;
 	float: left;
-	margin-left:10px;
+	margin-left: 10px;
 }
-.row .value .range{
-	width:100px;
+
+.row .value .range {
+	width: 100px;
 }
-.row .value .range1{
-	width:100px;
+
+.row .value .range1 {
+	width: 100px;
+}
+
+.colorPicker {
+	position: absolute;
+	z-index: 100;
+	margin-top: 20px;
+	border: 1px solid #CCC;
+	background: #FFF;
+	-webkit-box-shadow: #999 2px 2px 6px;
+	-moz-box-shadow: #999 2px 2px 6px;
+	box-shadow: #999 2px 2px 6px;
+	/**fix ie:记得将ie-css3.htc文件放在网站的根目录下哦，用相对路径是不行的！*/
+	behavior: url(ie-css3.htc);
 }
 </style>
-<script type="text/javascript"
-	src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
+<script type="text/javascript">
+	jQuery(function($) {
+		//选择颜色
+		$('input.color').each(function() {
+			var $this = $(this);
+			var picker = $('<div class="colorPicker"/>');
+			var farb = $.farbtastic(picker, function(c) {
+				if (c) {
+					$this.val(c.toUpperCase()).next().css({backgroundColor:c.toUpperCase()});
+					$this.change();
+				}
+			});
+			$this.focus(function() {
+				farb.setColor(this.value);
+				picker.css($this.position()).fadeIn();
+				$(document).one('mousedown', function handler() {
+					picker.fadeOut();
+				});
+			});
+			picker.appendTo($this.parent()).hide().mousedown(function(e) {
+				e.stopPropagation();
+			});
+			
+			$this.next().css({backgroundColor:$this.val()});
+		});
+		
+		//slider
+		$("input[type='range']").each(function() {
+			var $this = $(this);
+			$this.change(function(){
+				$this.next().text($this.val());
+			});
+		});
+		
+		//
+		$("#config").delegate("input[type='range'],input[type='text'],input[type='checkbox']","change",function(){
+			updateCss();
+		});
+		
+        var $target = $('#target');
+		function updateCss() {
+            var cfg = {};
+            if($('#enabledBorder').is(':checked')) {
+            	cfg.borderWidth = $('#borderWidth').val() + "px";
+            	cfg.borderColor = $('#borderColor').val() + "";
+            	cfg.borderRadius = $('#borderRadius').val() + "px";
+            }else{
+            	cfg.border = "0";
+            	cfg.borderRadius = "0";
+            }
+            
+            if($('#enabledShadow').is(':checked')) {
+            	cfg.boxShadow = $('#shadowColor').val();
+            	cfg.boxShadow += " " + $('#xOffset').val() + "px";
+            	cfg.boxShadow += " " + $('#yOffset').val() + "px";
+            	cfg.boxShadow += " " + $('#blurSize').val() + "px";
+            }else{
+            	cfg.boxShadow = "";
+            }
+            
+            if($('#enabledGradient').is(':checked')) {
+            	if(jQuery.browser.safari){
+            		cfg.backgroundImage = "-webkit-linear-gradient(" + $('#startColor').val() + "," + $('#endColor').val() + ")";
+            	}else if(jQuery.browser.mozilla){
+            		cfg.backgroundImage = "-moz-linear-gradient(" + $('#startColor').val() + "," + $('#endColor').val() + ")";
+            	}else if(jQuery.browser.opera){
+            		cfg.backgroundImage = "-o-linear-gradient(" + $('#startColor').val() + "," + $('#endColor').val() + ")";
+            	}else if(jQuery.browser.msie){
+            		cfg.backgroundImage = "-ms-linear-gradient(" + $('#startColor').val() + "," + $('#endColor').val() + ")";
+            		cfg.behavior = "url(ie-css3.htc)";
+            	}else{
+            		alert("unsupport browser!");
+            	}
+            }else{
+            	cfg.backgroundImage = "none";
+            }
+            
+            $target.css(cfg);
+        }
+		
+		updateCss();
+	});
+</script>
 </head>
 <body>
 	<div id="demo">
+		<div id="target">OK,好</div>
 		<div id="config">
 			<fieldset>
 				<legend>CSS样式值配置</legend>
 				<fieldset>
 					<legend>
-						<label><input type="checkbox" />border</label>
+						<label><input type="checkbox" id="enabledBorder" checked="checked"/>border</label>
 					</legend>
 					<div class="row">
 						<div class="label">border-width:</div>
 						<div class="value">
-							<input type="range" value="1" max="10" class="range"><span>1</span>px
+							<input id="borderWidth" type="range" value="1" max="10" class="range"><span>1</span>px
 						</div>
 					</div>
 					<div class="row">
 						<div class="label">border-color:</div>
 						<div class="value">
-							<input type="text" value="#696" size="5">
+							<input id="borderColor" type="text" value="#ccc" class="color" size="10"><span>&nbsp;</span>
 						</div>
 					</div>
 					<div class="row">
 						<div class="label">border-radius:</div>
 						<div class="value">
-							<input type="range" value="8" max="20" class="range"><span>8</span>px
+							<input id="borderRadius" type="range" value="8" max="20" class="range"><span>8</span>px
 						</div>
 					</div>
 				</fieldset>
 				<fieldset>
 					<legend>
-						<label><input type="checkbox" />box-shadow</label>
+						<label><input type="checkbox" id="enabledShadow" checked="checked"/>box-shadow</label>
 					</legend>
 					<div class="row">
+						<div class="label">Shadow Color:</div>
 						<div class="value">
-							Blur<input type="range" value="3" max="20" class="range1"><span>3</span>px
-							,X<input type="range" value="0" max="20" class="range1"><span>0</span>px
-							,Y<input type="range" value="2" max="20" class="range1"><span>2</span>px
+							<input id="shadowColor" type="text" value="#c6c" class="color" size="10"><span>&nbsp;</span>
+						</div>
+					</div>
+					<div class="row">
+						<div class="label">X Offset:</div>
+						<div class="value">
+							<input id="xOffset" type="range" value="1" max="20" class="range1"><span>1</span>px
+						</div>
+					</div>
+					<div class="row">
+						<div class="label">Y Offset:</div>
+						<div class="value">
+							<input id="yOffset" type="range" value="1" max="20" class="range1"><span>1</span>px
+						</div>
+					</div>
+					<div class="row">
+						<div class="label">Blur Size:</div>
+						<div class="value">
+							<input id="blurSize" type="range" value="20" max="20" class="range1"><span>20</span>px
 						</div>
 					</div>
 				</fieldset>
 				<fieldset>
 					<legend>
-						<label><input type="checkbox" />background linear-gradient</label>
+						<label><input type="checkbox" id="enabledGradient" checked="checked"/>background
+							linear-gradient</label>
 					</legend>
 					<div class="row">
+						<div class="label">Start Color:</div>
 						<div class="value">
-							Start Color<input type="text" value="#EEFF99" size="6">
-							,End Color<input type="text" value="#66EE33" size="6">
+							<input id="startColor" type="text" value="#8C0DF2" class="color" size="10"><span>&nbsp;</span>
+						</div>
+					</div>
+					<div class="row">
+						<div class="label">End Color:</div>
+						<div class="value">
+							<input id="endColor" type="text" value="#66EE33" class="color" size="10"><span>&nbsp;</span>
 						</div>
 					</div>
 				</fieldset>
 			</fieldset>
 		</div>
-		<div id="target">OK,好</div>
 	</div>
 </body>
 </html>
