@@ -12,6 +12,9 @@ body{background-color: #f5f5f5;}
 	margin: auto;
 	width: 650px;
 	position: relative;
+	border-color: blue;
+	border-style: solid;
+	-ms-border-width: 4px;
 }
 
 #target {
@@ -145,18 +148,21 @@ body{background-color: #f5f5f5;}
             }
             
             if($('#enabledGradient').is(':checked')) {
+            	var prefix;
             	if(jQuery.browser.safari){
-            		cfg.backgroundImage = "-webkit-linear-gradient(" + $('#startColor').val() + "," + $('#endColor').val() + ")";
+            		prefix = "-webkit-linear-gradient(";
             	}else if(jQuery.browser.mozilla){
-            		cfg.backgroundImage = "-moz-linear-gradient(" + $('#startColor').val() + "," + $('#endColor').val() + ")";
+            		prefix = "-moz-linear-gradient(";
             	}else if(jQuery.browser.opera){
-            		cfg.backgroundImage = "-o-linear-gradient(" + $('#startColor').val() + "," + $('#endColor').val() + ")";
+            		prefix = "-o-linear-gradient(";
             	}else if(jQuery.browser.msie){
-            		cfg.backgroundImage = "-ms-linear-gradient(" + $('#startColor').val() + "," + $('#endColor').val() + ")";
+            		prefix = "-ms-linear-gradient(";
             		cfg.behavior = "url(ie-css3.htc)";
             	}else{
             		alert("unsupport browser!");
+            		return;
             	}
+            	cfg.backgroundImage = prefix + $('#gradientDeg').val() + "deg," + $('#startColor').val() + "," + $('#endColor').val() + ")";
             }else{
             	cfg.backgroundImage = "none";
             }
@@ -231,6 +237,12 @@ body{background-color: #f5f5f5;}
 						<label><input type="checkbox" id="enabledGradient" checked="checked"/>background
 							linear-gradient</label>
 					</legend>
+					<div class="row">
+						<div class="label">Gradient Deg:</div>
+						<div class="value">
+							<input id="gradientDeg" type="range" value="0" max="360" class="range1"><span>0</span>deg
+						</div>
+					</div>
 					<div class="row">
 						<div class="label">Start Color:</div>
 						<div class="value">
