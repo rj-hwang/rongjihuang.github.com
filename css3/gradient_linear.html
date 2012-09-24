@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>CSS3 background linear-gradient</title>
+<link type="text/css" href="../assets/farbtastic.css" rel="stylesheet" />
+<link type="text/css" href="./gradient_linear.css" rel="stylesheet" />
+<script type="text/javascript" src="../assets/jquery.min.js"></script>
+<script type="text/javascript" src="../assets/farbtastic.min.js"></script>
+<script type="text/javascript" src="./gradient_linear.js"></script>
+</head>
+<body>
+<div id="main">
+<fieldset id="cfg">
+<legend>CSS</legend>
+<table id="items">
+	<tr><td class="label">width</td><td class="value">: <div data-cfg='{type:"number",min:50,max:200}'>200</div>px;</td></tr>
+	<tr><td class="label">height</td><td class="value">: <div data-cfg='{type:"number",min:50,max:200}'>100</div>px;</td></tr>
+	<tr>
+		<td class="label">border</td><td class="value">: <div 
+			data-cfg='{type:"number",min:50,max:200}'>1</div>px <div 
+			data-cfg='{type:"select", items:["solid","dotted","dashed"]}'>solid</div> <div 
+			data-cfg='{type:"color"}'>#921</div><span style="background-color:#921;">&nbsp;</span>;</td>
+	</tr>
+	<tr>
+		<td class="label">box-shadow</td><td class="value">: <div 
+			data-cfg='{type:"color"}'>#666</div> <div 
+			data-cfg='{type:"number",min:0,max:10}'>5</div>px <div 
+			data-cfg='{type:"number",min:0,max:10}'>10</div>px <div 
+			data-cfg='{type:"number",min:0,max:50}'>20</div>px;</td>
+	</tr>
+	<tr>
+		<td class="label"><input type="radio" name="background-image" checked/>background-image</td><td class="value">: linear-gradient(<div 
+			data-cfg='{type:"color"}'>#fff</div><span style="background-color:#fff;">&nbsp;</span>, <div 
+			data-cfg='{type:"color"}'>#000</div><span style="background-color:#000;">&nbsp;</span>);</td>
+	</tr>
+	<tr>
+		<td class="label"><input type="radio" name="background-image"/>background-image</td><td class="value">: linear-gradient(<div 
+			data-cfg='{type:"select", items:["left","right","top","bottom"]}'>top</div>, <div 
+			data-cfg='{type:"color"}'>#fff</div><span style="background-color:#fff;">&nbsp;</span>, <div 
+			data-cfg='{type:"color"}'>#000</div><span style="background-color:#000;">&nbsp;</span>);</td>
+	</tr>
+	<tr>
+		<td class="label"><input type="radio" name="background-image"/>background-image</td><td class="value">: linear-gradient(<div 
+			data-cfg='{type:"number",min:50,max:200}'>270</div>deg, <div 
+			data-cfg='{type:"color"}'>#fff</div><span style="background-color:#fff;">&nbsp;</span>, <div 
+			data-cfg='{type:"color"}'>#000</div><span style="background-color:#000;">&nbsp;</span>);</td>
+	</tr>
+</table>
+</fieldset>
+<div id="preview"><div id="target"></div></div>
+</div>
+</body>
+</html>
