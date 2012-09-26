@@ -43,3 +43,6 @@ body{
 	box-shadow: #666 5px 10px 20px;
 	background-image: -webkit-linear-gradient(#fff, #000);
 }
+#code {
+	color: green;
+}
