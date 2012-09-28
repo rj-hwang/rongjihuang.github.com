@@ -7,46 +7,73 @@
 <link type="text/css" href="./gradient_linear.css" rel="stylesheet" />
 </head>
 <body>
-<div id="main">
-<fieldset id="cfg">
-<legend>CSS Config</legend>
-<table id="items">
-	<tr><td class="label">width</td><td class="value">: <div data-cfg='{type:"number",min:50,max:200}'>200</div>px;</td></tr>
-	<tr><td class="label">height</td><td class="value">: <div data-cfg='{type:"number",min:50,max:200}'>100</div>px;</td></tr>
-	<tr>
-		<td class="label">border</td><td class="value">: <div 
-			data-cfg='{type:"number",min:50,max:200}'>1</div>px <div 
-			data-cfg='{type:"select", items:["solid","dotted","dashed"]}'>solid</div> <div 
-			data-cfg='{type:"color"}'>#921</div><span style="background-color:#921;">&nbsp;</span>;</td>
-	</tr>
-	<tr>
-		<td class="label">box-shadow</td><td class="value">: <div 
-			data-cfg='{type:"color"}'>#666</div> <div 
-			data-cfg='{type:"number",min:0,max:10}'>5</div>px <div 
-			data-cfg='{type:"number",min:0,max:10}'>10</div>px <div 
-			data-cfg='{type:"number",min:0,max:50}'>20</div>px;</td>
-	</tr>
-	<tr>
-		<td class="label"><input type="radio" name="background-image" checked/>background-image</td><td class="value">: linear-gradient(<div 
-			data-cfg='{type:"color"}'>#fff</div><span style="background-color:#fff;">&nbsp;</span>, <div 
-			data-cfg='{type:"color"}'>#000</div><span style="background-color:#000;">&nbsp;</span>);</td>
-	</tr>
-	<tr>
-		<td class="label"><input type="radio" name="background-image"/>background-image</td><td class="value">: linear-gradient(<div 
-			data-cfg='{type:"select", items:["left","right","top","bottom"]}'>top</div>, <div 
-			data-cfg='{type:"color"}'>#fff</div><span style="background-color:#fff;">&nbsp;</span>, <div 
-			data-cfg='{type:"color"}'>#000</div><span style="background-color:#000;">&nbsp;</span>);</td>
-	</tr>
-	<tr>
-		<td class="label"><input type="radio" name="background-image"/>background-image</td><td class="value">: linear-gradient(<div 
-			data-cfg='{type:"number",min:50,max:200}'>270</div>deg, <div 
-			data-cfg='{type:"color"}'>#fff</div><span style="background-color:#fff;">&nbsp;</span>, <div 
-			data-cfg='{type:"color"}'>#000</div><span style="background-color:#000;">&nbsp;</span>);</td>
-	</tr>
-</table>
-</fieldset>
-<div id="preview"><div id="target"></div></div>
-<pre id="code"></pre>
+<div id="preview"><div id="target"><div class="text">#target</div></div></div>
+<div id="sidebar">
+	<fieldset>
+		<legend>CSS Config</legend>
+		<table id="lines">
+			<tr class="line">
+				<td class="key">width</td>
+				<td class="value">: <div data-cfg='{"type":"number","min":10, "max":600}'>200</div>px;</td>
+			</tr>
+			<tr class="line">
+				<td class="key">height</td>
+				<td class="value">: <div data-cfg='{"type":"number","min":10,"max":600}'>100</div>px;</td>
+			</tr>
+			<tr class="line">
+				<td class="key">border</td>
+				<td class="value">: <div 
+					data-cfg='{"type":"number","min":0,"max":10}'>1</div>px <div 
+					data-cfg='{"type":"select", "items":["solid","dotted","dashed"]}'>solid</div> <div
+					data-cfg='{"type":"color"}'>#921</div><span></span>;</td>
+			</tr>
+			<tr class="line">
+				<td class="key">border-radius</td>
+				<td class="value">: <div data-cfg='{"type":"number","min":0, "max":100}'>10</div>px;</td>
+			</tr>
+			<tr class="line">
+				<td class="key"><input type="checkbox" name="box-shadow"/>box-shadow</td>
+				<td class="value">: <div 
+					data-cfg='{"type":"color"}'>#666</div><span></span> <div 
+					data-cfg='{"type":"number","min":0,"max":10}'>5</div>px <div 
+					data-cfg='{"type":"number","min":0,"max":10}'>10</div>px <div 
+					data-cfg='{"type":"number","min":0,"max":50}'>20</div>px;</td>
+			</tr>
+			<tr class="line">
+				<td class="key"><input type="radio" name="background-image"/>background-image</td>
+				<td class="value">: -webkit-linear-gradient(<div 
+					data-cfg='{"type":"color"}'>#fff</div><span></span>, <div 
+					data-cfg='{"type":"color"}'>#000</div><span></span>);</td>
+			</tr>
+			<tr class="line">
+				<td class="key"><input type="radio" name="background-image" checked/>background-image</td>
+				<td class="value">: -webkit-linear-gradient(<div 
+					data-cfg='{"type":"select", "items":["left","right","top","bottom"]}'>top</div>, <div 
+					data-cfg='{"type":"color"}'>#fff</div><span></span>, <div 
+					data-cfg='{"type":"color"}'>#000</div><span></span>);</td>
+			</tr>
+			<tr class="line">
+				<td class="key"><input type="radio" name="background-image"/>background-image</td>
+				<td class="value">: -webkit-linear-gradient(<div 
+					data-cfg='{"type":"number","min":50,"max":200}'>270</div>deg, <div 
+					data-cfg='{"type":"color"}'>#fff</div><span></span>, <div 
+					data-cfg='{"type":"color"}'>#000</div><span></span>);</td>
+			</tr>
+		</table>
+	</fieldset>
+	<fieldset>
+		<legend>Real Code</legend>
+		<pre id="code"></pre>
+	</fieldset>
+	<fieldset>
+		<legend>Document</legend>
+		<img src="./webkit-gradient-new.png" title="New Grammar"/><br/>
+		<img src="./webkit-gradient.png" title="Old Grammar"/>
+	</fieldset>
+	<fieldset>
+		<legend>Link</legend>
+		<a href="http://www.colorzilla.com/gradient-editor/" target="_blank">Ultimate CSS Gradient Generator</a>
+	</fieldset>
 </div>
 <script type="text/javascript" src="../assets/jquery.min.js"></script>
 <script type="text/javascript" src="../assets/farbtastic.min.js"></script>

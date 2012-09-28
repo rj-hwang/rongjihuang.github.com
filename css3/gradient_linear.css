@@ -1,48 +1,97 @@
 body{
-	background-color: #333;
+	background-color: #272822;
 	color: #ccc;
 	margin: 0;
-	padding: 10px;
+	padding: 0px;
 }
-#main {
-	display: inline-block;
+#sidebar {
+	position: absolute;
+	left: 0px;
 }
-#cfg {
+
+/* css config container */
+fieldset {
 	width: auto;
-	display: inline-block;
+	border: 1px solid #6AC62E;
+	color: #6AC62E;
+	margin: 0 0 10px 10px;
+	position: relative;
 }
-#items,#preview {
+#lines {
 	margin: 0;
 	padding: 0;
+	color: #50C0EF;
 }
-#items .label{
+#lines .key{
 	text-align: right;
 	font-style: italic;
 }
-#items .value{
+#lines .value{
 	text-align: left;
 }
-#items .value > div{
+#lines .value > div{
 	display: inline-block;
 	text-decoration: underline;
 	padding: 0 1px;
 	cursor: pointer;
-	border-style: s
 }
+#lines .value > span{
+	display: inline-block;
+	cursor: default;
+	width: 16px;
+	height: 16px;
+}
+
+/* real code container */
+#code {
+	color: #6AC62E;
+	padding: 0;
+	margin: 0;
+}
+
+/* target container */
 #preview {
+	position: absolute;
 	padding: 50px;
 	border: 0px solid gray;
+	right: 0px;
 }
+
+/* default config */
 #target {
 	margin: 0 auto;
 	border: 1px solid #921;
 	width: 200px;
 	height: 100px;
+	text-align: center;
+	position: relative;
 
 	border-radius: 10px;
+	/*
 	box-shadow: #666 5px 10px 20px;
-	background-image: -webkit-linear-gradient(#fff, #000);
+	background-image: -webkit-linear-gradient(#fff, #000);*/
 }
-#code {
-	color: green;
+#target>.text {
+	position: absolute;
+	font-size: 20px;
+	height: 24px;
+	display: inline-block;
+	top: 50%;
+	margin-top: -12px;
+}
+
+.picker {
+	position: absolute;
+	display: none;
+	z-index: 1000;
+	margin-top: 20px;
+	border: 0px solid #999;
+	border-width: 1px 0 0 1px;
+	-webkit-box-shadow: #999 2px 2px 6px;
+	-moz-box-shadow: #999 2px 2px 6px;
+	box-shadow: #999 2px 2px 4px;
+}
+
+.picker>input{
+	width: 400px;
 }
