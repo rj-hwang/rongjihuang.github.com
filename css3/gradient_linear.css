@@ -59,7 +59,6 @@ fieldset {
 
 /* default config */
 #target {
-	margin: 0 auto;
 	border: 1px solid #921;
 	width: 200px;
 	height: 100px;
@@ -74,10 +73,12 @@ fieldset {
 #target>.text {
 	position: absolute;
 	font-size: 20px;
+	width: 70px;
 	height: 24px;
-	display: inline-block;
 	top: 50%;
 	margin-top: -12px;
+	left: 50%;
+	margin-left: -35px;
 }
 
 .picker {
