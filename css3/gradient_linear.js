@@ -63,21 +63,9 @@ jQuery(function($) {
 			
 			$this.next().css({backgroundColor:$this.text()});
 		} else if (cfg.type == "number") {	// change number
-			var $picker = $('<div class="picker number"><input type="range" value="0" max="100" step="1"/></div>').appendTo("body")
-				.mousedown(function(e) {
-					e.stopPropagation();
-				});
-			$picker.children().change(function() {
-				$this.text(this.value);
-				cssCfg.doChange();
-			});
-			$this.click(function() {
-				$picker.children().attr({min: cfg.min, max: cfg.max}).val($this.text());
-				$picker.css($this.offset()).fadeIn();
-				$(document).one('mousedown', function handler() {
-					$picker.fadeOut();
-				});
-			});
+			$this.changeNumber($this.data("cfg"));
+		} else if (cfg.type == "select") {	// change text
+			$this.changeText($this.data("cfg"));
 		}
 	});
 

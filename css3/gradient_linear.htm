@@ -14,30 +14,30 @@
 		<table id="lines">
 			<tr class="line">
 				<td class="key">width</td>
-				<td class="value">: <div data-cfg='{"type":"number","min":10, "max":600}'>200</div>px;</td>
+				<td class="value">: <div data-cfg='{"type":"number","min":10, "max":600, "change": "cssCfg.doChange"}'>200</div>px;</td>
 			</tr>
 			<tr class="line">
 				<td class="key">height</td>
-				<td class="value">: <div data-cfg='{"type":"number","min":10,"max":600}'>100</div>px;</td>
+				<td class="value">: <div data-cfg='{"type":"number","min":10,"max":600, "change": "cssCfg.doChange"}'>100</div>px;</td>
 			</tr>
 			<tr class="line">
 				<td class="key">border</td>
 				<td class="value">: <div 
-					data-cfg='{"type":"number","min":0,"max":10}'>1</div>px <div 
-					data-cfg='{"type":"select", "items":["solid","dotted","dashed"]}'>solid</div> <div
+					data-cfg='{"type":"number","min":0,"max":10, "change": "cssCfg.doChange"}'>1</div>px <div 
+					data-cfg='{"type":"select", "items":["solid","dotted","dashed","double","groove","inset","outset","hidden"], "change": "cssCfg.doChange"}'>solid</div> <div
 					data-cfg='{"type":"color"}'>#921</div><span></span>;</td>
 			</tr>
 			<tr class="line">
 				<td class="key">border-radius</td>
-				<td class="value">: <div data-cfg='{"type":"number","min":0, "max":100}'>10</div>px;</td>
+				<td class="value">: <div data-cfg='{"type":"number","min":0, "max":100, "change": "cssCfg.doChange"}'>10</div>px;</td>
 			</tr>
 			<tr class="line">
 				<td class="key"><input type="checkbox" name="box-shadow"/>box-shadow</td>
 				<td class="value">: <div 
 					data-cfg='{"type":"color"}'>#666</div><span></span> <div 
-					data-cfg='{"type":"number","min":0,"max":10}'>5</div>px <div 
-					data-cfg='{"type":"number","min":0,"max":10}'>10</div>px <div 
-					data-cfg='{"type":"number","min":0,"max":50}'>20</div>px;</td>
+					data-cfg='{"type":"number","min":0,"max":10, "change": "cssCfg.doChange"}'>5</div>px <div 
+					data-cfg='{"type":"number","min":0,"max":10, "change": "cssCfg.doChange"}'>10</div>px <div 
+					data-cfg='{"type":"number","min":0,"max":50, "change": "cssCfg.doChange"}'>20</div>px;</td>
 			</tr>
 			<tr class="line">
 				<td class="key"><input type="radio" name="background-image"/>background-image</td>
@@ -55,7 +55,7 @@
 			<tr class="line">
 				<td class="key"><input type="radio" name="background-image"/>background-image</td>
 				<td class="value">: -webkit-linear-gradient(<div 
-					data-cfg='{"type":"number","min":50,"max":200}'>270</div>deg, <div 
+					data-cfg='{"type":"number","min":50,"max":200, "change": "cssCfg.doChange"}'>270</div>deg, <div 
 					data-cfg='{"type":"color"}'>#fff</div><span></span>, <div 
 					data-cfg='{"type":"color"}'>#000</div><span></span>);</td>
 			</tr>
@@ -77,6 +77,9 @@
 </div>
 <script type="text/javascript" src="../assets/jquery.min.js"></script>
 <script type="text/javascript" src="../assets/farbtastic.min.js"></script>
+<script type="text/javascript" src="../assets/plugins/cfg.js"></script>
+<script type="text/javascript" src="../assets/plugins/cfg.changeNumber.js"></script>
+<script type="text/javascript" src="../assets/plugins/cfg.changeText.js"></script>
 <script type="text/javascript" src="./gradient_linear.js"></script>
 </body>
 </html>

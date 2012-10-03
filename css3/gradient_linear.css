@@ -91,8 +91,18 @@ fieldset {
 	-webkit-box-shadow: #999 2px 2px 6px;
 	-moz-box-shadow: #999 2px 2px 6px;
 	box-shadow: #999 2px 2px 4px;
+	opacity: .8;
+	background-color: #666;
+
+	list-style: none;
+	padding: 0;
+	cursor: default;
 }
 
+.picker>li {
+	list-style: none;
+	margin: 2px;
+}
 .picker>input{
 	width: 400px;
 }
