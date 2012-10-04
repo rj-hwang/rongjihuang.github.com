@@ -18,7 +18,7 @@
 			</tr>
 			<tr class="line">
 				<td class="key">height</td>
-				<td class="value">: <div data-cfg='{"type":"number","min":10,"max":600}'>100</div>px;</td>
+				<td class="value">: <div data-cfg='{"type":"number","min":10,"max":600}'>200</div>px;</td>
 			</tr>
 			<tr class="line">
 				<td class="key">border</td>
@@ -60,6 +60,15 @@
 			<tr class="line">
 				<td class="key"><input type="radio" name="background-image"/>background-image</td>
 				<td class="value">: -webkit-linear-gradient(<div 
+					data-cfg='{"type":"select", "items":["left","right","top","bottom","left top","left bottom","right top","right bottom"]}'>top</div>, <div 
+					data-cfg='{"type":"color"}'>#fff</div><span></span> <div 
+					data-cfg='{"type":"number","min":0,"max":100}'>40</div>%, <div 
+					data-cfg='{"type":"color"}'>#000</div><span></span> <div 
+					data-cfg='{"type":"number","min":0,"max":100}'>60</div>%);</td>
+			</tr>
+			<tr class="line">
+				<td class="key"><input type="radio" name="background-image"/>background-image</td>
+				<td class="value">: -webkit-linear-gradient(<div 
 					data-cfg='{"type":"number","min":0,"max":360}'>0</div>deg, <div 
 					data-cfg='{"type":"color"}'>#fff</div><span></span>, <div 
 					data-cfg='{"type":"color"}'>#000</div><span></span>);</td>
@@ -69,6 +78,48 @@
 				<td class="value">: -webkit-linear-gradient(<div 
 					data-cfg='{"type":"color"}'>#fff</div><span></span>, <div 
 					data-cfg='{"type":"color"}'>#000</div><span></span>);</td>
+			</tr>
+			<tr class="line">
+				<td class="key"><input type="radio" name="background-image"/>background-image</td>
+				<td class="value">: -webkit-gradient(linear, <div 
+					data-cfg='{"type":"select", "items":["left top","left bottom","right top","right bottom"]}'>left top</div>, <div 
+					data-cfg='{"type":"select", "items":["left top","left bottom","right top","right bottom"]}'>left bottom</div>, from(<div 
+					data-cfg='{"type":"color"}'>#fff</div><span></span>), to(<div 
+					data-cfg='{"type":"color"}'>#000</div><span></span>));</td>
+			</tr>
+			<tr class="line">
+				<td class="key"><input type="radio" name="background-image"/>background-image</td>
+				<td class="value">: -webkit-gradient(linear, <div 
+					data-cfg='{"type":"number","min":0,"max":100}'>0</div>% <div 
+					data-cfg='{"type":"number","min":0,"max":100}'>0</div>%, <div 
+					data-cfg='{"type":"number","min":0,"max":100}'>0</div>% <div 
+					data-cfg='{"type":"number","min":0,"max":100}'>100</div>%, from(<div 
+					data-cfg='{"type":"color"}'>#fff</div><span></span>), to(<div 
+					data-cfg='{"type":"color"}'>#000</div><span></span>));</td>
+			</tr>
+			<tr class="line">
+				<td class="key"><input type="radio" name="background-image"/>background-image</td>
+				<td class="value">: -webkit-gradient(linear, <div 
+					data-cfg='{"type":"number","min":0,"max":100}'>0</div>% <div 
+					data-cfg='{"type":"number","min":0,"max":100}'>0</div>%, <div 
+					data-cfg='{"type":"number","min":0,"max":100}'>0</div>% <div 
+					data-cfg='{"type":"number","min":0,"max":100}'>100</div>%, from(<div 
+					data-cfg='{"type":"color"}'>#fff</div><span></span>), color-stop(<div 
+					data-cfg='{"type":"number","min":0,"max":100}'>20</div>%, <div 
+					data-cfg='{"type":"color"}'>#888</div><span></span>), color-stop(<div 
+					data-cfg='{"type":"number","min":0,"max":100}'>80</div>%, <div 
+					data-cfg='{"type":"color"}'>#000</div><span></span>));</td>
+			</tr>
+
+			<!-- firefox -->
+			<tr class="line">
+				<td class="key"><input type="radio" name="background-image"/>background-image</td>
+				<td class="value">: -moz-linear-gradient(<div 
+					data-cfg='{"type":"select", "items":["left","right","top","bottom","left top","left bottom","right top","right bottom"]}'>top</div>, <div 
+					data-cfg='{"type":"color"}'>#fff</div><span></span> <div 
+					data-cfg='{"type":"number","min":0,"max":100}'>0</div>%, <div 
+					data-cfg='{"type":"color"}'>#000</div><span></span> <div 
+					data-cfg='{"type":"number","min":0,"max":100}'>100</div>%);</td>
 			</tr>
 		</table>
 	</fieldset>
@@ -80,10 +131,13 @@
 		<legend>Document</legend>
 		<img src="./webkit-gradient-new.png" title="New Grammar"/><br/>
 		<img src="./webkit-gradient.png" title="Old Grammar"/>
+		<p>firefox 不支持 -moz-gradient</p>
 	</fieldset>
 	<fieldset>
 		<legend>Link</legend>
-		<a href="http://www.colorzilla.com/gradient-editor/" target="_blank">Ultimate CSS Gradient Generator</a>
+		<a href="http://www.colorzilla.com/gradient-editor/" target="_blank">Ultimate CSS Gradient Generator</a><br>
+		<a href="http://webdesignerwall.com/tutorials/cross-browser-css-gradient" target="_blank">Cross-Browser CSS Gradient</a><br>
+		<a href="http://www.css-html5.com/css3%E6%95%99%E7%A8%8B%EF%BC%9Acss3%E7%BA%BF%E6%80%A7%E6%B8%90%E5%8F%98.html" target="_blank">CSS3教程：CSS3线性渐变</a>
 	</fieldset>
 </div>
 <script type="text/javascript" src="../assets/jquery.min.js"></script>
