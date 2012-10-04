@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>CSS3 Radial Gradient</title>
+<link type="text/css" href="../assets/farbtastic.css" rel="stylesheet" />
+<link type="text/css" href="./gradient_linear.css" rel="stylesheet" />
+</head>
+<body>
+<div id="preview"><div id="target"><div class="text">#target</div></div></div>
+<div id="sidebar">
+	<h1>CSS3 Radial Gradient</h1>
+	<fieldset>
+		<legend>CSS Config</legend>
+		<table id="lines">
+			<tr class="line">
+				<td class="key" style="width:170px;">width</td>
+				<td class="value">: <div data-cfg='{"type":"number","min":10, "max":600}'>200</div>px;</td>
+			</tr>
+			<tr class="line">
+				<td class="key">height</td>
+				<td class="value">: <div data-cfg='{"type":"number","min":10,"max":600}'>200</div>px;</td>
+			</tr>
+			<tr class="line">
+				<td class="key">border</td>
+				<td class="value">: <div 
+					data-cfg='{"type":"number","min":0,"max":10}'>1</div>px <div 
+					data-cfg='{"type":"select", "items":["solid","dotted","dashed","double","groove","inset","outset","hidden"]}'>solid</div> <div
+					data-cfg='{"type":"color"}'>#921</div><span></span>;</td>
+			</tr>
+			<tr class="line">
+				<td class="key">border-radius</td>
+				<td class="value">: <div data-cfg='{"type":"number","min":0, "max":100}'>10</div>px;</td>
+			</tr>
+
+			<!-- box-shadow -->
+			<tr class="line">
+				<td class="key"><input type="checkbox" name="box-shadow"/>box-shadow</td>
+				<td class="value">: <div 
+					data-cfg='{"type":"color"}'>#666</div><span></span> <div 
+					data-cfg='{"type":"number","min":0,"max":10}'>5</div>px <div 
+					data-cfg='{"type":"number","min":0,"max":10}'>10</div>px <div 
+					data-cfg='{"type":"number","min":0,"max":50}'>20</div>px;</td>
+			</tr>
+
+			<!-- background-image -->			
+			<tr class="line">
+				<td class="key"><input type="radio" name="background-image" checked/>background-image</td>
+				<td class="value">: radial-gradient(<div 
+					data-cfg='{"type":"number","min":0,"max":100}'>50</div>% <div 
+					data-cfg='{"type":"number","min":0,"max":200}'>50</div>%, <div 
+					data-cfg='{"type":"select", "items":["circle","ellipse"]}'>circle</div> <div 
+					data-cfg='{"type":"select", "items":["closest-side","closest-corner","farthest-side","farthest-corner","contain","cover"]}'>closest-side</div>, <div 
+					data-cfg='{"type":"color"}'>#fff</div><span></span>, <div 
+					data-cfg='{"type":"color"}'>#000</div><span></span> <div 
+					data-cfg='{"type":"number","min":0,"max":100}'>100</div>%);</td>
+			</tr>
+			<tr class="line">
+				<td class="key"><input type="radio" name="background-image"/>background-image</td>
+				<td class="value">: -webkit-radial-gradient(<div 
+					data-cfg='{"type":"number","min":0,"max":100}'>50</div>% <div 
+					data-cfg='{"type":"number","min":0,"max":200}'>50</div>%, <div 
+					data-cfg='{"type":"select", "items":["circle","ellipse"]}'>circle</div> <div 
+					data-cfg='{"type":"select", "items":["closest-side","closest-corner","farthest-side","farthest-corner","contain","cover"]}'>closest-side</div>, <div 
+					data-cfg='{"type":"color"}'>#fff</div><span></span>, <div 
+					data-cfg='{"type":"color"}'>#000</div><span></span> <div 
+					data-cfg='{"type":"number","min":0,"max":100}'>100</div>%);</td>
+			</tr>
+			<tr class="line">
+				<td class="key"><input type="radio" name="background-image"/>background-image</td>
+				<td class="value">: -webkit-radial-gradient(<div 
+					data-cfg='{"type":"number","min":0,"max":100}'>50</div>% <div 
+					data-cfg='{"type":"number","min":0,"max":200}'>50</div>%, <div 
+					data-cfg='{"type":"select", "items":["circle","ellipse"]}'>circle</div> <div 
+					data-cfg='{"type":"select", "items":["closest-side","closest-corner","farthest-side","farthest-corner","contain","cover"]}'>closest-side</div>, <div 
+					data-cfg='{"type":"color"}'>#fff</div><span></span>, <div 
+					data-cfg='{"type":"color"}'>#76F264</div><span></span> <div 
+					data-cfg='{"type":"number","min":0,"max":100}'>50</div>%, <div 
+					data-cfg='{"type":"color"}'>#000</div><span></span> <div 
+					data-cfg='{"type":"number","min":0,"max":100}'>100</div>%);</td>
+			</tr>
+			<tr class="line">
+				<td class="key"><input type="radio" name="background-image"/>background-image</td>
+				<td class="value">: -webkit-radial-gradient(<div 
+					data-cfg='{"type":"number","min":0,"max":200}'>0</div>px <div 
+					data-cfg='{"type":"number","min":0,"max":200}'>0</div>px, <div 
+					data-cfg='{"type":"select", "items":["circle","ellipse"]}'>circle</div> <div 
+					data-cfg='{"type":"select", "items":["closest-side","closest-corner","farthest-side","farthest-corner","contain","cover"]}'>farthest-side</div>, <div 
+					data-cfg='{"type":"color"}'>#fff</div><span></span>, <div 
+					data-cfg='{"type":"color"}'>#000</div><span></span> <div 
+					data-cfg='{"type":"number","min":0,"max":100}'>100</div>%);</td>
+			</tr>
+			<tr class="line">
+				<td class="key"><input type="radio" name="background-image"/>background-image</td>
+				<td class="value">: -webkit-radial-gradient(<div 
+					data-cfg='{"type":"select", "items":["left","center","right"]}'>center</div> <div 
+					data-cfg='{"type":"select", "items":["top","center","bottom"]}'>center</div>, <div 
+					data-cfg='{"type":"select", "items":["circle","ellipse"]}'>circle</div> <div 
+					data-cfg='{"type":"select", "items":["closest-side","closest-corner","farthest-side","farthest-corner","contain","cover"]}'>farthest-side</div>, <div 
+					data-cfg='{"type":"color"}'>#fff</div><span></span>, <div 
+					data-cfg='{"type":"color"}'>#000</div><span></span> <div 
+					data-cfg='{"type":"number","min":0,"max":100}'>100</div>%);</td>
+			</tr>
+			<tr class="line">
+				<td class="key"><input type="radio" name="background-image"/>background-image</td>
+				<td class="value">: -webkit-radial-gradient(<div 
+					data-cfg='{"type":"number","min":0,"max":200}'>0</div>px <div 
+					data-cfg='{"type":"number","min":0,"max":200}'>0</div>px, <div 
+					data-cfg='{"type":"number","min":0,"max":200}'>50</div>px <div 
+					data-cfg='{"type":"number","min":0,"max":200}'>50</div>px, <div 
+					data-cfg='{"type":"color"}'>#fff</div><span></span>, <div 
+					data-cfg='{"type":"color"}'>#000</div><span></span> <div 
+					data-cfg='{"type":"number","min":0,"max":100}'>100</div>%);</td>
+			</tr>
+
+			<!-- firefox -->
+			<tr class="line">
+				<td class="key"><input type="radio" name="background-image"/>background-image</td>
+				<td class="value">: -moz-radial-gradient(<div 
+					data-cfg='{"type":"number","min":0,"max":100}'>50</div>% <div 
+					data-cfg='{"type":"number","min":0,"max":200}'>50</div>%, <div 
+					data-cfg='{"type":"select", "items":["circle","ellipse"]}'>circle</div> <div 
+					data-cfg='{"type":"select", "items":["closest-side","closest-corner","farthest-side","farthest-corner","contain","cover"]}'>closest-side</div>, <div 
+					data-cfg='{"type":"color"}'>#fff</div><span></span>, <div 
+					data-cfg='{"type":"color"}'>#000</div><span></span> <div 
+					data-cfg='{"type":"number","min":0,"max":100}'>100</div>%);</td>
+			</tr>
+			<tr class="line">
+				<td class="key"><input type="radio" name="background-image"/>background-image</td>
+				<td class="value">: -moz-radial-gradient(<div 
+					data-cfg='{"type":"number","min":0,"max":100}'>50</div>% <div 
+					data-cfg='{"type":"number","min":0,"max":200}'>50</div>%, <div 
+					data-cfg='{"type":"select", "items":["circle","ellipse"]}'>circle</div> <div 
+					data-cfg='{"type":"select", "items":["closest-side","closest-corner","farthest-side","farthest-corner","contain","cover"]}'>closest-side</div>, <div 
+					data-cfg='{"type":"color"}'>#fff</div><span></span>, <div 
+					data-cfg='{"type":"color"}'>#76F264</div><span></span> <div 
+					data-cfg='{"type":"number","min":0,"max":100}'>50</div>%, <div 
+					data-cfg='{"type":"color"}'>#000</div><span></span> <div 
+					data-cfg='{"type":"number","min":0,"max":100}'>100</div>%);</td>
+			</tr>
+			<tr class="line">
+				<td class="key"><input type="radio" name="background-image"/>background-image</td>
+				<td class="value">: -moz-radial-gradient(<div 
+					data-cfg='{"type":"number","min":0,"max":200}'>0</div>px <div 
+					data-cfg='{"type":"number","min":0,"max":200}'>0</div>px, <div 
+					data-cfg='{"type":"select", "items":["circle","ellipse"]}'>circle</div> <div 
+					data-cfg='{"type":"select", "items":["closest-side","closest-corner","farthest-side","farthest-corner","contain","cover"]}'>farthest-side</div>, <div 
+					data-cfg='{"type":"color"}'>#fff</div><span></span>, <div 
+					data-cfg='{"type":"color"}'>#000</div><span></span> <div 
+					data-cfg='{"type":"number","min":0,"max":100}'>100</div>%);</td>
+			</tr>
+			<tr class="line">
+				<td class="key"><input type="radio" name="background-image"/>background-image</td>
+				<td class="value">: -moz-radial-gradient(<div 
+					data-cfg='{"type":"select", "items":["left","center","right"]}'>center</div> <div 
+					data-cfg='{"type":"select", "items":["top","center","bottom"]}'>center</div>, <div 
+					data-cfg='{"type":"select", "items":["circle","ellipse"]}'>circle</div> <div 
+					data-cfg='{"type":"select", "items":["closest-side","closest-corner","farthest-side","farthest-corner","contain","cover"]}'>farthest-side</div>, <div 
+					data-cfg='{"type":"color"}'>#fff</div><span></span>, <div 
+					data-cfg='{"type":"color"}'>#000</div><span></span> <div 
+					data-cfg='{"type":"number","min":0,"max":100}'>100</div>%);</td>
+			</tr>
+			<tr class="line">
+				<td class="key"><input type="radio" name="background-image"/>background-image</td>
+				<td class="value">: -moz-radial-gradient(<div 
+					data-cfg='{"type":"number","min":0,"max":200}'>0</div>px <div 
+					data-cfg='{"type":"number","min":0,"max":200}'>0</div>px, <div 
+					data-cfg='{"type":"number","min":0,"max":200}'>50</div>px <div 
+					data-cfg='{"type":"number","min":0,"max":200}'>50</div>px, <div 
+					data-cfg='{"type":"color"}'>#fff</div><span></span>, <div 
+					data-cfg='{"type":"color"}'>#000</div><span></span> <div 
+					data-cfg='{"type":"number","min":0,"max":100}'>100</div>%);</td>
+			</tr>
+		</table>
+	</fieldset>
+	<fieldset>
+		<legend>Real Code</legend>
+		<pre id="code"></pre>
+	</fieldset>
+	<fieldset>
+		<legend>Document</legend>
+		<p>&lt;radial-gradient&gt;：radial-gradient([ &lt;position&gt;,]? [ [ &lt;shape&gt; || &lt;size&gt; ] | &lt;shape-size&gt;{2},]? &lt;color-stop&gt;[, &lt;color-stop&gt;]+);</p>
+		<p>firefox 不支持 -moz-gradient 和 -moz-radial-gradient的shape-size</p>
+	</fieldset>
+	<fieldset>
+		<legend>Link</legend>
+		<a href="http://westciv.com/tools/radialgradients/index.html" target="_blank">Radial Gradients</a><br>
+		<a href="http://www.evansdiy.com/tips/css3+gradient" target="_blank">CSS3的奥秘——渐变</a><br>
+		<a href="http://css.doyoe.com/values/image/radial-gradient().htm" target="_blank">CSS参考手册 radial-gradient</a>
+	</fieldset>
+</div>
+<script type="text/javascript" src="../assets/jquery.min.js"></script>
+<script type="text/javascript" src="../assets/farbtastic.min.js"></script>
+<script type="text/javascript" src="../assets/plugins/cfg.js"></script>
+<script type="text/javascript" src="../assets/plugins/cfg.changeNumber.js"></script>
+<script type="text/javascript" src="../assets/plugins/cfg.changeText.js"></script>
+<script type="text/javascript" src="./gradient_linear.js"></script>
+</body>
+</html>
