@@ -40,6 +40,8 @@ jQuery(function($) {
 	$lines.find(".line>td.value>div").each(function() {
 		var $this = $(this);
 		var cfg = $this.data("cfg");
+		if(!cfg.change)
+			cfg.change = cssCfg.doChange;
 		console.log("cfg.type=" + cfg.type);
 
 		if (cfg.type == "color") {	// select color
@@ -63,9 +65,9 @@ jQuery(function($) {
 			
 			$this.next().css({backgroundColor:$this.text()});
 		} else if (cfg.type == "number") {	// change number
-			$this.changeNumber($this.data("cfg"));
+			$this.changeNumber(cfg);
 		} else if (cfg.type == "select") {	// change text
-			$this.changeText($this.data("cfg"));
+			$this.changeText(cfg);
 		}
 	});
 
