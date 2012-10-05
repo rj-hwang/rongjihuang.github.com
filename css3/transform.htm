@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>CSS3 Transform</title>
+<link type="text/css" href="../assets/farbtastic.css" rel="stylesheet" />
+<link type="text/css" href="./gradient_linear.css" rel="stylesheet" />
+</head>
+<body>
+<div id="preview" class="border"><div id="target"><div class="text">#target</div></div></div>
+<div id="sidebar">
+	<h1>CSS3 Transform</h1>
+	<fieldset>
+		<legend>CSS Config</legend>
+		<table id="lines">
+			<tr class="line">
+				<td class="key" style="width:200px;">width</td>
+				<td class="value">: <div data-cfg='{"type":"number","min":10, "max":600}'>200</div>px;</td>
+			</tr>
+			<tr class="line">
+				<td class="key">height</td>
+				<td class="value">: <div data-cfg='{"type":"number","min":10,"max":600}'>200</div>px;</td>
+			</tr>
+			<tr class="line">
+				<td class="key">border</td>
+				<td class="value">: <div 
+					data-cfg='{"type":"number","min":0,"max":50}'>0</div>px <div 
+					data-cfg='{"type":"select", "items":["solid","dotted","dashed","double","groove","inset","outset","hidden"]}'>solid</div> <div
+					data-cfg='{"type":"color"}'>#921</div><span></span>;</td>
+			</tr>
+			<tr class="line">
+				<td class="key">border-radius</td>
+				<td class="value">: <div data-cfg='{"type":"number","min":0, "max":200}'>10</div>px;</td>
+			</tr>
+
+			<!-- background-color -->
+			<tr class="line">
+				<td class="key">background-color</td>
+				<td class="value">: <div data-cfg='{"type":"color"}'>#000</div><span></span>;</td>
+			</tr>
+
+			<!-- transform-origin -->
+			<tr class="line">
+				<td class="key"><input type="radio" name="transform-origin" checked/>transform-origin</td>
+				<td class="value">: <div data-cfg='{"type":"number","min":0,"max":100}'>50</div>% <div data-cfg='{"type":"number","min":0,"max":100}'>50</div>%</td>
+			</tr>
+			<tr class="line">
+				<td class="key"><input type="radio" name="transform-origin"/>-webkit-transform-origin</td>
+				<td class="value">: <div data-cfg='{"type":"number","min":0,"max":100}'>50</div>% <div data-cfg='{"type":"number","min":0,"max":100}'>50</div>%</td>
+			</tr>
+			<tr class="line">
+				<td class="key"><input type="radio" name="transform-origin"/>-moz-transform-origin</td>
+				<td class="value">: <div data-cfg='{"type":"number","min":0,"max":100}'>50</div>% <div data-cfg='{"type":"number","min":0,"max":100}'>50</div>%</td>
+			</tr>
+
+			<!-- transform -->
+			<tr class="line">
+				<td class="key"><input type="radio" name="transform" checked/>transform</td>
+				<td class="value">: translate(<div data-cfg='{"type":"number","min":0,"max":100}'>10</div>px, <div data-cfg='{"type":"number","min":0,"max":100}'>10</div>px);</td>
+			</tr>
+			<tr class="line">
+				<td class="key"><input type="radio" name="transform"/>-webkit-transform</td>
+				<td class="value">: translate(<div data-cfg='{"type":"number","min":0,"max":100}'>10</div>px, <div data-cfg='{"type":"number","min":0,"max":100}'>10</div>px);</td>
+			</tr>
+			<tr class="line">
+				<td class="key"><input type="radio" name="transform"/>-webkit-transform</td>
+				<td class="value">: translate(<div data-cfg='{"type":"number","min":0,"max":100}'>50</div>%, <div data-cfg='{"type":"number","min":0,"max":100}'>0</div>%);</td>
+			</tr>
+			<tr class="line">
+				<td class="key"><input type="radio" name="transform"/>-webkit-transform</td>
+				<td class="value">: translateX(<div data-cfg='{"type":"number","min":0,"max":100}'>10</div>px);</td>
+			</tr>
+			<tr class="line">
+				<td class="key"><input type="radio" name="transform"/>-webkit-transform</td>
+				<td class="value">: rotate(<div data-cfg='{"type":"number","min":0,"max":360}'>45</div>deg);</td>
+			</tr>
+			<tr class="line">
+				<td class="key"><input type="radio" name="transform"/>-webkit-transform</td>
+				<td class="value">: scale(<div data-cfg='{"type":"number","min":0,"max":10}'>1</div>.<div data-cfg='{"type":"number","min":0,"max":10}'>0</div>, <div 
+				 data-cfg='{"type":"number","min":0,"max":10}'>1</div>.<div data-cfg='{"type":"number","min":0,"max":10}'>0</div>);</td>
+			</tr>
+			<tr class="line">
+				<td class="key"><input type="radio" name="transform"/>-webkit-transform</td>
+				<td class="value">: skew(<div data-cfg='{"type":"number","min":-90,"max":90}'>0</div>deg, <div data-cfg='{"type":"number","min":-90,"max":90}'>0</div>deg);</td>
+			</tr>
+
+			<!-- firefox -->
+			<tr class="line">
+				<td class="key"><input type="radio" name="transform"/>-moz-transform</td>
+				<td class="value">: translate(<div data-cfg='{"type":"number","min":0,"max":100}'>10</div>px, <div data-cfg='{"type":"number","min":0,"max":100}'>10</div>px);</td>
+			</tr>
+			<tr class="line">
+				<td class="key"><input type="radio" name="transform"/>-moz-transform</td>
+				<td class="value">: translate(<div data-cfg='{"type":"number","min":0,"max":100}'>50</div>%, <div data-cfg='{"type":"number","min":0,"max":100}'>0</div>%);</td>
+			</tr>
+			<tr class="line">
+				<td class="key"><input type="radio" name="transform"/>-moz-transform</td>
+				<td class="value">: translateX(<div data-cfg='{"type":"number","min":0,"max":100}'>10</div>px);</td>
+			</tr>
+			<tr class="line">
+				<td class="key"><input type="radio" name="transform"/>-moz-transform</td>
+				<td class="value">: rotate(<div data-cfg='{"type":"number","min":0,"max":360}'>45</div>deg);</td>
+			</tr>
+			<tr class="line">
+				<td class="key"><input type="radio" name="transform"/>-moz-transform</td>
+				<td class="value">: scale(<div data-cfg='{"type":"number","min":0,"max":10}'>1</div>.<div data-cfg='{"type":"number","min":0,"max":10}'>0</div>, <div 
+				 data-cfg='{"type":"number","min":0,"max":10}'>1</div>.<div data-cfg='{"type":"number","min":0,"max":10}'>0</div>);</td>
+			</tr>
+			<tr class="line">
+				<td class="key"><input type="radio" name="transform"/>-moz-transform</td>
+				<td class="value">: skew(<div data-cfg='{"type":"number","min":-90,"max":90}'>0</div>deg, <div data-cfg='{"type":"number","min":-90,"max":90}'>0</div>deg);</td>
+			</tr>
+		</table>
+	</fieldset>
+	<fieldset>
+		<legend>Real Code</legend>
+		<pre id="code"></pre>
+	</fieldset>
+	<fieldset>
+		<legend>Document</legend>
+		<p>transform：none | matrix(<number>,<number>,<number>,<number>,<number>,<number>)? translate(<length>[,<length>])? translateX(<length>)? translateY(<length>)? rotate(<angle>)? scale(<number>[,<number>])? scaleX(<number>)? scaleY(<number>)? skew(<angle>[,<angle>])? skewX(<angle>) || skewY(<angle>)?</p>
+	</fieldset>
+	<fieldset>
+		<legend>Link</legend>
+		<a href="http://css.doyoe.com/properties/2d-transform/transform.htm" target="_blank">CSS3 Transform</a>
+	</fieldset>
+</div>
+<script type="text/javascript" src="../assets/jquery.min.js"></script>
+<script type="text/javascript" src="../assets/farbtastic.min.js"></script>
+<script type="text/javascript" src="../assets/plugins/cfg.js"></script>
+<script type="text/javascript" src="../assets/plugins/cfg.changeNumber.js"></script>
+<script type="text/javascript" src="../assets/plugins/cfg.changeText.js"></script>
+<script type="text/javascript" src="./gradient_linear.js"></script>
+</body>
+</html>

@@ -56,6 +56,9 @@ fieldset {
 	border: 0px solid gray;
 	right: 0px;
 }
+#preview.border {
+	border-width: 1px;
+}
 
 /* default config */
 #target {
