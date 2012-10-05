@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>CSS3 Box Shadow</title>
+<link type="text/css" href="../assets/farbtastic.css" rel="stylesheet" />
+<link type="text/css" href="./gradient_linear.css" rel="stylesheet" />
+</head>
+<body>
+<div id="preview"><div id="target"><div class="text">#target</div></div></div>
+<div id="sidebar">
+	<h1>CSS3 Box Shadow</h1>
+	<fieldset>
+		<legend>CSS Config</legend>
+		<table id="lines">
+			<tr class="line">
+				<td class="key" style="width:170px;">width</td>
+				<td class="value">: <div data-cfg='{"type":"number","min":10, "max":600}'>200</div>px;</td>
+			</tr>
+			<tr class="line">
+				<td class="key">height</td>
+				<td class="value">: <div data-cfg='{"type":"number","min":10,"max":600}'>200</div>px;</td>
+			</tr>
+			<tr class="line">
+				<td class="key">border</td>
+				<td class="value">: <div 
+					data-cfg='{"type":"number","min":0,"max":50}'>0</div>px <div 
+					data-cfg='{"type":"select", "items":["solid","dotted","dashed","double","groove","inset","outset","hidden"]}'>solid</div> <div
+					data-cfg='{"type":"color"}'>#921</div><span></span>;</td>
+			</tr>
+			<tr class="line">
+				<td class="key">border-radius</td>
+				<td class="value">: <div data-cfg='{"type":"number","min":0, "max":500}'>100</div>px;</td>
+			</tr>
+
+			<!-- background-color -->
+			<tr class="line">
+				<td class="key">background-color</td>
+				<td class="value">: <div data-cfg='{"type":"color"}'>#000</div><span></span>;</td>
+			</tr>
+
+			<!-- box-shadow -->
+			<tr class="line">
+				<td class="key"><input type="radio" name="box-shadow" checked/>box-shadow</td>
+				<td class="value">: <div 
+					data-cfg='{"type":"color"}'>#666</div><span></span> <div 
+					data-cfg='{"type":"number","min":-50,"max":50}'>10</div>px <div 
+					data-cfg='{"type":"number","min":-50,"max":50}'>10</div>px;</td>
+			</tr>
+			<tr class="line">
+				<td class="key"><input type="radio" name="box-shadow"/>box-shadow</td>
+				<td class="value">:  <div 
+					data-cfg='{"type":"color"}'>#666</div><span></span> <div 
+					data-cfg='{"type":"number","min":-50,"max":50}'>0</div>px <div 
+					data-cfg='{"type":"number","min":-50,"max":50}'>0</div>px <div 
+					data-cfg='{"type":"number","min":-50,"max":50}'>20</div>px;</td>
+			</tr>
+			<tr class="line">
+				<td class="key"><input type="radio" name="box-shadow"/>box-shadow</td>
+				<td class="value">:  <div 
+					data-cfg='{"type":"color"}'>#666</div><span></span> <div 
+					data-cfg='{"type":"number","min":-50,"max":50}'>0</div>px <div 
+					data-cfg='{"type":"number","min":-50,"max":50}'>0</div>px <div 
+					data-cfg='{"type":"number","min":-50,"max":50}'>0</div>px <div 
+					data-cfg='{"type":"number","min":-50,"max":50}'>20</div>px;</td>
+			</tr>
+			<tr class="line">
+				<td class="key"><input type="radio" name="box-shadow"/>box-shadow</td>
+				<td class="value">:  <div 
+					data-cfg='{"type":"color"}'>#666</div><span></span> <div 
+					data-cfg='{"type":"number","min":-50,"max":50}'>10</div>px <div 
+					data-cfg='{"type":"number","min":-50,"max":50}'>10</div>px inset;</td>
+			</tr>
+			<tr class="line">
+				<td class="key"><input type="radio" name="box-shadow"/>box-shadow</td>
+				<td class="value">:  <div 
+					data-cfg='{"type":"color"}'>#666</div><span></span> <div 
+					data-cfg='{"type":"number","min":-50,"max":50}'>10</div>px <div 
+					data-cfg='{"type":"number","min":-50,"max":50}'>10</div>px <div 
+					data-cfg='{"type":"number","min":-50,"max":50}'>10</div>px inset;</td>
+			</tr>
+			<tr class="line">
+				<td class="key"><input type="radio" name="box-shadow"/>box-shadow</td>
+				<td class="value">:  <div 
+					data-cfg='{"type":"color"}'>#666</div><span></span> <div 
+					data-cfg='{"type":"number","min":-50,"max":50}'>10</div>px <div 
+					data-cfg='{"type":"number","min":-50,"max":50}'>10</div>px <div 
+					data-cfg='{"type":"number","min":-50,"max":50}'>10</div>px <div 
+					data-cfg='{"type":"number","min":-50,"max":50}'>10</div>px inset;</td>
+			</tr>
+
+			<!-- firefox -->
+		</table>
+	</fieldset>
+	<fieldset>
+		<legend>Real Code</legend>
+		<pre id="code"></pre>
+	</fieldset>
+	<fieldset>
+		<legend>Document</legend>
+		<p>box-shadow：none | &lt;shadow&gt; [ , &lt;shadow&gt; ]*</p>
+		<p>&lt;shadow&gt; = inset? && [ &lt;length&gt;{2,4} && &lt;color&gt;? ]</p>
+	</fieldset>
+	<fieldset>
+		<legend>Link</legend>
+		<a href="http://css.doyoe.com/properties/border/box-shadow.htm" target="_blank">CSS参考手册 box-shadow</a><br>
+		<a href="http://www.w3cplus.com/content/css3-box-shadow" target="_blank">CSS3 box-shadow</a><br>
+		<a href="http://jquery.org.cn/css/css3preview/Box-Shadow.html" target="_blank">UBox Shadow(阴影)-Css3演示</a>
+	</fieldset>
+</div>
+<script type="text/javascript" src="../assets/jquery.min.js"></script>
+<script type="text/javascript" src="../assets/farbtastic.min.js"></script>
+<script type="text/javascript" src="../assets/plugins/cfg.js"></script>
+<script type="text/javascript" src="../assets/plugins/cfg.changeNumber.js"></script>
+<script type="text/javascript" src="../assets/plugins/cfg.changeText.js"></script>
+<script type="text/javascript" src="./gradient_linear.js"></script>
+</body>
+</html>
